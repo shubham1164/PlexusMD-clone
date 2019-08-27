@@ -1,0 +1,22 @@
+{
+  "imageUrl": "https://picsum.photos/350/200",
+  "title": "PlexusMD Learning",
+  "videos": 9,
+  "views": 16300,
+  "subsribers": 18000,
+  "description": "PlexusMD Learning engages with senior medical professionals across specialties, health agencies and medical associations worldwide to bring to you videos on important topics, latest developments, guidelines and stories of interest.",
+  "featuring": [
+    {
+      "uid": "1",
+      "profileImageUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+      "name": "Dr. Tejus Naik",
+      "description": "Consulting Neonatal & Paediation"
+    },
+    {
+      "uid": "2",
+      "profileImageUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+      "name": "Dr. Mahadev Desai",
+      "description": "Sr. Consultant Physician at Ahemdabad"
+    }
+  ]
+}
