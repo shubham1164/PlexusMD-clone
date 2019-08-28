@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "title": "Pulmonary Tuberculosis",
+    "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et d",
+    "thumbUrl": "http://placeimg.com/100/70/doctor?m4dc=1",
+    "videoUrl": "http://placeimg.com/100/70/doctor?m4dc=1",
+    "views": 550,
+    "likes": 14,
+    "comments": 1,
+    "duration": "3:53",
+    "isBookmarkedFlag": "N",
+    "featured": {
+      "uid": "1",
+      "profileImageUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+      "name": "Dr. Tejus Naik",
+      "description": "Consulting Neonatal & Paediation"
+    }
+  },
+  {
+    "id": "2",
+    "title": "Pulmonary Tuberculosis",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500",
+    "thumbUrl": "http://placeimg.com/100/70/doctor?m4dc=2",
+    "videoUrl": "http://placeimg.com/100/70/doctor?m4dc=2",
+    "views": 4893,
+    "likes": 597,
+    "comments": 34,
+    "duration": "2:45",
+    "isBookmarkedFlag": "N",
+    "featured": {
+      "uid": "2",
+      "profileImageUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+      "name": "Dr. shivam Singla",
+      "description": "Sr. Senior Consultant"
+    }
+  },
+  {
+    "id": "3",
+    "title": "Tonsillectomy",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed",
+    "thumbUrl": "http://placeimg.com/100/70/doctor?m4dc=3",
+    "videoUrl": "http://placeimg.com/100/70/doctor?m4dc=3",
+    "views": 9693,
+    "likes": 790,
+    "comments": 23,
+    "duration": "2:00",
+    "isBookmarkedFlag": "N",
+    "featured": {
+      "uid": "2",
+      "profileImageUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+      "name": "Dr. shivam Singla",
+      "description": "Sr. Senior Consultant"
+    }
+  },
+  {
+    "id": "4",
+    "title": "Approach to a case of cancer",
+    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin word",
+    "thumbUrl": "http://placeimg.com/100/70/doctor?m4dc=4",
+    "videoUrl": "http://placeimg.com/100/70/doctor?m4dc=4",
+    "views": 67832,
+    "likes": 445,
+    "comments": 34,
+    "duration": "2:33",
+    "isBookmarkedFlag": "N",
+    "featured": {
+      "uid": "50",
+      "profileImageUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+      "name": "Dr. Sahil Singla",
+      "description": "Sr. Consulting Neonatal"
+    }
+  },
+  {
+    "id": "5",
+    "title": "Anaphylaxis",
+    "description": "ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, se",
+    "thumbUrl": "http://placeimg.com/100/70/doctor?m4dc=5",
+    "videoUrl": "http://placeimg.com/100/70/doctor?m4dc=5",
+    "views": 43923,
+    "likes": 5899,
+    "comments": 47,
+    "duration": "3:25",
+    "isBookmarkedFlag": "N",
+    "featured": {
+      "uid": "20",
+      "profileImageUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+      "name": "Dr. Gurav Jain",
+      "description": "Sr. Senior Consultant"
+    }
+  },
+  {
+    "id": "6",
+    "title": "Treatment of Abscess",
+    "description": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs",
+    "thumbUrl": "http://placeimg.com/100/70/doctor?m4dc=6",
+    "videoUrl": "http://placeimg.com/100/70/doctor?m4dc=6",
+    "views": 60843,
+    "likes": 588,
+    "comments": 48,
+    "duration": "1:49",
+    "isBookmarkedFlag": "N",
+    "featured": {
+      "uid": "24",
+      "profileImageUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+      "name": "Dr. Rahul Singla",
+      "description": "Sr. Senior Consultant"
+    }
+  }
+]

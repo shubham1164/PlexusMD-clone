@@ -6,8 +6,9 @@
 
 import React, { Component} from "react";
 import {Image, StyleSheet, FlatList, TouchableNativeFeedback, StatusBar } from 'react-native';
-import {Container, Header, Left, Body, Right, Title, Content, Footer, View, Text, Button, Icon} from 'native-base';
+import {Container, Header, Left, Body, Right, Title, Content, Footer, View, Text, Button, Icon, Separator} from 'native-base';
 import FeaturingListItem from '../Components/ListItems/FeaturingListItem';
+import VideosListItem from '../Components/ListItems/VideosListItem';
 import Helper from '../Utils/Helper';
 
 
@@ -23,33 +24,84 @@ class HomeScreen extends Component{
       views: 0,
       subscribers: 0,
       featuringDataArray: [],
+      videosDataArray: []
     }
   }
 
   componentDidMount(){
     // Fetch Data from the server
-    const data = require('../data/HomeScreenData.json');
+
+    // Home Page data
+    const homeScreenData = require('../data/HomeScreenData.json');
     this.setState({
-      imageUrl: data.imageUrl,
-      title: data.title,
-      description: data.description,
-      videos: data.videos,
-      views: data.views,
-      subscribers: data.subsribers,
-      featuringDataArray: data.featuring
+      imageUrl: homeScreenData.imageUrl,
+      title: homeScreenData.title,
+      description: homeScreenData.description,
+      videos: homeScreenData.videos,
+      views: homeScreenData.views,
+      subscribers: homeScreenData.subsribers,
+      featuringDataArray: homeScreenData.featuring
+    });
+    // Videos Data array
+    const videos = require('../data/Videos.json');
+    this.setState({
+      videosDataArray: videos
     })
 
   }
 
-  _keyExtractor = (item, index) => item.uid;
+  _keyExtractorForFeaturing = (item, index) => item.uid;
 
-  _renderItem = function({item}){
+  _keyExtractorForVideos = (item, index) => item.id;
+
+  _renderItemForFeaturing = function({item}){
     return (
       <FeaturingListItem
         id={item.uid}
         profileImageUrl={item.profileImageUrl}
         name={item.name}
         description={item.description}
+       />
+    )
+  }.bind(this)
+
+  _renderItemHeaderForVideos = function({item}){
+    return(
+      <View style={styles.videosHeaderView}>
+        <Text style={styles.videosHeaderTextView}>ALL VIDEOS</Text>
+      </View>
+    )
+  }.bind(this)
+
+  _renderItemFooterForVideos = function({item}){
+    return(
+      <View style={{justifyContent: 'center', alignItems: 'center', margin: 20}}>
+        <Icon name="md-star-outline" type="Ionicons" />
+        <Text style={{color: '#9a9a9a', marginTop: 10}}>NO MORE VIDEOS TO SHOW!</Text>
+      </View>
+    )
+  }.bind(this)
+
+  _renderItemSeparatorForVideos = function({item}){
+    return(
+      <View style={{backgroundColor: '#e8e8e8', width: '100%', height: 20}}>
+      </View>
+    )
+  }.bind(this)
+
+  _renderItemForVideos = function({item}){
+    return (
+      <VideosListItem
+        id={item.id}
+        title={item.title}
+        description={item.description}
+        thumbUrl={item.thumbUrl}
+        views={item.views}
+        likes={item.likes}
+        comments={item.comments}
+        duration={item.duration}
+        isBookmarkedFlag={item.isBookmarkedFlag}
+        featured={item.featured}
        />
     )
   }.bind(this)
@@ -62,7 +114,7 @@ class HomeScreen extends Component{
   render(){
     return(
       <Container>
-        <Header noLeft style={{backgroundColor: '#eeeeee'}}>
+        <Header noLeft style={{backgroundColor: '#e8e8e8'}}>
           <Body><Text style={styles.headerText}>PlexusMD Learning</Text></Body>
           <Right />
         </Header>
@@ -92,8 +144,8 @@ class HomeScreen extends Component{
                   style={styles.featuringList}
                   horizontal={true}
                   data={this.state.featuringDataArray}
-                  keyExtractor={this._keyExtractor}
-                  renderItem={this._renderItem}
+                  keyExtractor={this._keyExtractorForFeaturing}
+                  renderItem={this._renderItemForFeaturing}
                 />
              </View>
            )}
@@ -113,6 +165,16 @@ class HomeScreen extends Component{
                </View>
              </TouchableNativeFeedback >
            </View>
+
+           {/* All Videos */}
+           <FlatList
+              data={this.state.videosDataArray}
+              keyExtractor={this._keyExtractorForVideos}
+              ListHeaderComponent={this._renderItemHeaderForVideos}
+              ListFooterComponent={this._renderItemFooterForVideos}
+              ItemSeparatorComponent={this._renderItemSeparatorForVideos}
+              renderItem={this._renderItemForVideos}
+            />
 
            {/* Empty Space */}
            <View style={{width: 100, height: 500}}></View>
@@ -212,6 +274,16 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: '#243e3c'
   },
+  videosHeaderView: {
+    paddingTop: 25,
+    paddingLeft: 10,
+    paddingBottom: 8,
+    backgroundColor: '#e8e8e8'
+  },
+  videosHeaderTextView: {
+    fontWeight: 'bold',
+    fontSize: 14
+  }
 })
 
 export default HomeScreen;

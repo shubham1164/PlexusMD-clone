@@ -13,7 +13,7 @@ import {Text} from 'native-base';
 
 const StackNavigator = createStackNavigator(
   {
-    HomeScreen: {screen: HomeScreen},
+    HomeScreen: {screen: HomeScreen}
   },
   {
     headerMode: 'none',

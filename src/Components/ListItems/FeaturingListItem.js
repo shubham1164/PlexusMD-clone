@@ -13,7 +13,7 @@ export default class FeaturingListItem extends PureComponent{
           style={styles.profile}
         />
         <View style={styles.detailsDiv}>
-          <Text style={styles.name}>{this.props.name}</Text>
+          <Text numberOfLines={1} style={styles.name}>{this.props.name}</Text>
           <Text numberOfLines={1} style={styles.description}>{this.props.description}</Text>
         </View>
       </View>
@@ -24,10 +24,12 @@ export default class FeaturingListItem extends PureComponent{
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'transparent',
     flexDirection: 'row',
     alignItems: 'center',
-    margin: 10,
     maxWidth: 140,
+    marginLeft: 10,
+    height: 50
   },
   profile: {
     width: 30,
@@ -36,21 +38,23 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   detailsDiv: {
-    padding: 5,
+    paddingLeft: 5,
     justifyContent: 'space-between'
   },
   name: {
-    fontSize: 14,
+    fontSize: 12,
+    maxWidth: 100,
   },
   description: {
-    fontSize: 10,
-    color: 'gray'
+    fontSize: 9,
+    color: 'gray',
+    maxWidth: 100,
   }
 })
 
 FeaturingListItem.propTypes = {
-  id: PropTypes.string,
-  profileImageUrl: PropTypes.string,
-  name: PropTypes.string,
-  description: PropTypes.string
+  id: PropTypes.string.isRequired,
+  profileImageUrl: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
 };
