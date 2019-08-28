@@ -75,16 +75,16 @@ class HomeScreen extends Component{
 
   _renderItemFooterForVideos = function({item}){
     return(
-      <View style={{justifyContent: 'center', alignItems: 'center', margin: 20}}>
+      <View style={styles.footerView}>
         <Icon name="md-star-outline" type="Ionicons" />
-        <Text style={{color: '#9a9a9a', marginTop: 10}}>NO MORE VIDEOS TO SHOW!</Text>
+        <Text style={styles.footerText}>NO MORE VIDEOS TO SHOW!</Text>
       </View>
     )
   }.bind(this)
 
   _renderItemSeparatorForVideos = function({item}){
     return(
-      <View style={{backgroundColor: '#e8e8e8', width: '100%', height: 20}}>
+      <View style={styles.listSeperator}>
       </View>
     )
   }.bind(this)
@@ -102,19 +102,21 @@ class HomeScreen extends Component{
         duration={item.duration}
         isBookmarkedFlag={item.isBookmarkedFlag}
         featured={item.featured}
+        onPressItemFunc={this.navigateToVideosDetailScreen}
        />
     )
   }.bind(this)
 
-  // <editor-fold desc="Subscribe & Share">
-
-  // </editor-fold>
-
+  navigateToVideosDetailScreen = function(id){
+    this.props.navigation.navigate('VideosDetailScreen', {
+      id: id
+    })
+  }.bind(this)
 
   render(){
     return(
       <Container>
-        <Header noLeft style={{backgroundColor: '#e8e8e8'}}>
+        <Header noLeft style={styles.headerView}>
           <Body><Text style={styles.headerText}>PlexusMD Learning</Text></Body>
           <Right />
         </Header>
@@ -151,7 +153,7 @@ class HomeScreen extends Component{
            )}
 
            {/* subscribe & Share */}
-           <View style={{flex: 1, flexDirection: 'row'}}>
+           <View style={styles.subscribeAndShareView}>
              <TouchableNativeFeedback>
                 <View style={[styles.button, styles.subscribeButton]}>
                  <Text style={styles.subscribeButtonText}>SUBSCRIBE (FREE)</Text>
@@ -176,9 +178,6 @@ class HomeScreen extends Component{
               renderItem={this._renderItemForVideos}
             />
 
-           {/* Empty Space */}
-           <View style={{width: 100, height: 500}}></View>
-
         </Content>
       </Container>
     )
@@ -186,8 +185,8 @@ class HomeScreen extends Component{
 }
 
 const styles = StyleSheet.create({
-  mainContent: {
-    margin: 10
+  headerView: {
+    backgroundColor: '#e8e8e8'
   },
   headerText: {
     color: 'black'
@@ -214,12 +213,12 @@ const styles = StyleSheet.create({
   },
   subtitleText: {
     fontWeight: 'bold',
-    fontSize: 12,
+    fontSize: 11,
     color: '#5e9a6e'
   },
   subtitleTextCount: {
     fontWeight: 'bold',
-    fontSize: 13,
+    fontSize: 12,
     color: '#5e9a6e'
   },
   description: {
@@ -232,13 +231,33 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginBottom: 5,
     fontSize: 13,
+    fontWeight: 'bold'
   },
   featuringList: {
     marginLeft: 10,
     marginRight: 10,
     marginBottom: 10
   },
+  footerView: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 20
+  },
+  footerText: {
+    color: '#9a9a9a',
+    marginTop: 10,
+    fontSize: 16
+  },
+  listSeperator: {
+    backgroundColor: '#e8e8e8',
+    width: '100%',
+    height: 20
+  },
+  mainContent: {
+    margin: 10
+  },
   subscribeAndShareView: {
+    flex: 1,
     flexDirection: 'row'
   },
   button: {
